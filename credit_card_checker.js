@@ -35,75 +35,79 @@ const batch = [valid1, valid2, valid3, valid4, valid5, invalid1, invalid2, inval
 //  This is the main function. 
 const validateCred = array => {
 
-// console.log(`The original array is: ${array}`)
+    // console.log(`The original array is: ${array}`)
 
-// Here we are reversing the array. 
-reversedArr = array.reverse()
+    // Here we are reversing the array. 
+    reversedArr = array.reverse()
 
-// You can use this console log to view the reversed array. 
-// console.log(`The reversed array is ${reversedArr}.`)
+    // You can use this console log to view the reversed array. 
+    // console.log(`The reversed array is ${reversedArr}.`)
 
-// This is the first element of the reversed array that we need to drop at first, but we will need it in the last step to add it to the final sum. 
-let firstElement = reversedArr.shift()
+    // This is the first element of the reversed array that we need to drop at first, but we will need it in the last step to add it to the final sum. 
+    let firstElement = reversedArr.shift()
 
 
-// console.log(`The array without the first element is ${reversedArr}`)
+    // console.log(`The array without the first element is ${reversedArr}`)
 
-// Here we are looping from the first element to the last, but only doing the operation on the even indexes, starting from 0 which is even. 
-for (let i = 0; i < reversedArr.length ; i++){
-  if (i % 2 === 0){
-      check = reversedArr[i]*2
-      if (check > 9){
-          newArr.push(check - 9)
-      } else if (check < 9){
-          newArr.push(check)
-      }
-  } else {
-    //   If the current index is not even, then we don't want to perform any operations to it and we will add it to the new array as it is. 
-      newArr.push(reversedArr[i])
-  }
+    // Here we are looping from the first element to the last, but only doing the operation on the even indexes, starting from 0 which is even. 
+    for (let i = 0; i < reversedArr.length ; i++){
+    if (i % 2 === 0){
+        check = reversedArr[i]*2
+        if (check > 9){
+            newArr.push(check - 9)
+        } else if (check < 9){
+            newArr.push(check)
+        }
+    } else {
+        //   If the current index is not even, then we don't want to perform any operations to it and we will add it to the new array as it is. 
+        newArr.push(reversedArr[i])
+    }
 
-  }
-//   You can use this console log to see the new array. 
-//  console.log(`The newArr array is ${newArr}.`)
+    }
+    //   You can use this console log to see the new array. 
+    //  console.log(`The newArr array is ${newArr}.`)
 
-//  With this function, we will get the sum of all the elements in the new array. 
- const reducer = (previousValue, currentValue) => previousValue + currentValue
- let sumArr = newArr.reduce(reducer)
+    //  With this function, we will get the sum of all the elements in the new array. 
+    const reducer = (previousValue, currentValue) => previousValue + currentValue
+    let sumArr = newArr.reduce(reducer)
 
-// You can use this console log to check the sum of the elements without the first one from the original array. 
-//  console.log(`The sum of elements without the first one is: ${sumArr}`)
+    // You can use this console log to check the sum of the elements without the first one from the original array. 
+    //  console.log(`The sum of elements without the first one is: ${sumArr}`)
 
-//  Remember we dropped the first element at the beginning? Now we need to add it again so that we can get a final sum. 
-let finalSum = firstElement + sumArr
+    //  Remember we dropped the first element at the beginning? Now we need to add it again so that we can get a final sum. 
+    let finalSum = firstElement + sumArr
 
-// console.log(`The total sum of all the elements in the array is: ${finalSum}`)
+    // console.log(`The total sum of all the elements in the array is: ${finalSum}`)
 
-// -----------//
+    // -----------//
 
-// Here we apply the logic required to know if a card is valid or not. 
-if (finalSum % 10 === 0){
-    console.log(`The card is valid`)
-} else {
-    console.log('The card is invalid')
+    // Here we apply the logic required to know if a card is valid or not. 
+    if (finalSum % 10 === 0){
+        console.log(`The card is valid`)
+    } else {
+        console.log('The card is invalid')
+    }
+
 }
 
-}
 
+validateCred(valid1)
+validateCred(valid2)
+validateCred(valid3)
+validateCred(valid4)
+validateCred(valid5)
 
-// validateCred(valid1)
+// const findInvalidCards = nestedArrays => {
+//     const invalidCards = []
+//     nestedArrays.forEach(nestedArray => {
+//         if (validateCred(nestedArray) === 'The card is invalid'){
+//             invalidCards.push(nestedArray)
+//         } 
+//     })
+//     console.log(invalidCards)
+// }
 
-const findInvalidCards = nestedArrays => {
-    const invalidCards = []
-    nestedArrays.forEach(nestedArray => {
-        if (validateCred(nestedArray) === 'The card is invalid'){
-            invalidCards.push(nestedArray)
-        } 
-    })
-    console.log(invalidCards)
-}
-
-findInvalidCards(batch)
+// findInvalidCards(batch)
 
 
 

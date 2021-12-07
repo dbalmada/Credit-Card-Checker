@@ -90,12 +90,10 @@ const validateCred = array => {
 
 }
 
+valid25 = [5,2,0,4,2,4,5,2,5,0,0,0,1,4,8,8]
+// The problem here is that you can't 
+validateCred(valid25)
 
-validateCred(valid1)
-validateCred(valid2)
-validateCred(valid3)
-validateCred(valid4)
-validateCred(valid5)
 
 // const findInvalidCards = nestedArrays => {
 //     const invalidCards = []
@@ -108,6 +106,7 @@ validateCred(valid5)
 // }
 
 // findInvalidCards(batch)
+
 
 
 

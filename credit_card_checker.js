@@ -91,21 +91,8 @@ const validateCred = array => {
 }
 
 valid25 = [5,2,0,4,2,4,5,2,5,0,0,0,1,4,8,8]
-// The problem here is that you can't 
+
 validateCred(valid25)
-
-
-// const findInvalidCards = nestedArrays => {
-//     const invalidCards = []
-//     nestedArrays.forEach(nestedArray => {
-//         if (validateCred(nestedArray) === 'The card is invalid'){
-//             invalidCards.push(nestedArray)
-//         } 
-//     })
-//     console.log(invalidCards)
-// }
-
-// findInvalidCards(batch)
 
 
 
